@@ -1,0 +1,69 @@
+#include<iostream>
+#include<iomanip>
+#include<conio.h>
+
+using namespace std;
+int main ()
+{
+   int choice, num1, num2, sum, diff, prod, mod;
+   float quo;
+   char cont;
+   bool abort = false;
+
+   cout << "Welcome to the program!" << endl;
+  
+   do
+   {
+   cout << fixed << showpoint << setprecision(2);
+   cout << "\n Enter your desired way of calculation. Pick: " << endl;
+   cout << "1 for ADDITION. \n2 for SUBRACTION. \n3 for MULTIPLICATION. \n4 for DIVISION, \n5 for MODULUS." << endl;
+   cin >> choice;
+   cout << "Enter your two numbers: " << endl;
+   cin >> num1;
+   cin >> num2;
+
+   switch (choice)
+   {
+		case 1:
+			sum = num1 + num2;
+			cout << "You picked ADDITION. \nThe result is: " << sum;
+			break;
+		case 2:
+			diff = num1 - num2;
+			cout << "You picked SUBTRACTION. \nThe result is: " << diff;
+			break;
+		case 3:
+			prod = num1 * num2;
+			cout << "You picked MULTIPLICATION. \nThe result is: " << prod;
+			break;
+		case 4:
+			quo = num1 / num2;
+			cout << "You picked DIVISION. \nThe result is: " << quo;
+			break;
+		case 5:
+			mod = num1 % num2;
+			cout << "You picked MODULUS. \nThe result is: " << mod;
+			break;
+		default:
+			cout << "Invalid!!! \nFor choice of desired calculation, pick only from 1-5.";
+   }
+   
+   cout << "\n\nDo you wish to calculate more? \nEnter: \n 'Y' or 'y' for YES, \nOtherwise, enter any key. " << endl;
+   cin >> cont;
+
+   switch (cont)
+   {
+		case 'Y':
+		case 'y':
+			cout << "\nRerunning program...";
+			break;
+		default:
+			abort = true;
+			cout << "\nThank you for using this program!";
+			break;
+   }
+   } while (!abort);
+
+	_getch();
+    return 0;
+}
